@@ -1,1 +1,0 @@
-const lex = str => str.split(' ').filter(s => s.length);
