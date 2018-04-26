@@ -63,6 +63,10 @@ const Num = Symbol('num');
 
 // 3. The Parser
 
+/*
+    👇
+mul 3   add 2   5
+*/
 const parser = (tokens) => {
     let index = 0;
 
@@ -84,4 +88,24 @@ const parser = (tokens) => {
     const parseExpr = () => /\d/.test(peek()) ? parseNum() : parseOp();
 
     return parseExpr();
+}
+
+// 4. Transpiler
+
+const transpile = (ast) => {
+    const opMap = {
+        add: '+',
+        mul: '*',
+        sub: '-',
+        div: '/',
+        mod: '%'
+    };
+    
+    const transpileNode = (node) => node.type === Num ? transpileNum(node) : transpileOp(node);
+    
+    const transpileNum = (node) => parseInt(node.val);
+
+    const transpileOp = (node) => '(' + node.expr.map(transpileNode).join(' ' + opMap[node.val] + ' ') + ')';
+
+    return transpileNode(ast);
 }
