@@ -1,4 +1,3 @@
-
 // 1. Lexical Analysis: Generating tokens
 const lex = (code) => code.split(' ').filter(s => s.length).map(s => s.trim());
 
@@ -108,4 +107,12 @@ const transpile = (ast) => {
     const transpileOp = (node) => '(' + node.expr.map(transpileNode).join(' ' + opMap[node.val] + ' ') + ')';
 
     return transpileNode(ast);
+}
+
+const program = () => {
+    const code = document.getElementById('code').value;
+    const output = transpile(parser(lex(code)));
+    document.getElementById('output').innerHTML = 'Output is : <b>'+ output + '</b>';
+
+    
 }

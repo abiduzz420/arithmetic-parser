@@ -1,8 +1,19 @@
 <html>
     <head>
         <script src="js-25-compiler.js"></script>
+        <style>
+            body {
+                max-width: 500px; 
+                margin: auto;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <h1>Tiny Compiler</h1>
+            <input id="code" style="width: 300px;" type="text" name="code" />
+            <button onclick="program()">Compile</button>
+            <br><br>
+            <span id="output"></span>
     </body>
 </html>
