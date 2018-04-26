@@ -1,1 +1,1 @@
-const lex = str => str.split(' ').filter(s => s.length);
+const lex = (code) => code.split(' ').filter(s => s.length).map(s => s.trim());
