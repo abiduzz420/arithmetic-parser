@@ -1,9 +1,15 @@
 body {
-    max-width: 500px;
+    max-width: 2000px;
     margin: auto;
     text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #code {
     width: 400px;
+    font-size: 1.5rem;
+    font-family: 'Courier New',
+    Courier,
+    monospace;
 }
